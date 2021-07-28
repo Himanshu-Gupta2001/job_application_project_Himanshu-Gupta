@@ -11,6 +11,20 @@ while(!feof($file))
   if ($str_arr[1]==$psw and $str_arr[2]==$email){
 		echo "Congratulations! You are authorized user"."<br>";
     echo "Your Job Application number is ".$str_arr[4]."<br>";
+    echo "<br>";
+    $ques=$str_arr[4] % 20 + 1;
+    if($ques == 1){
+      $solve=fopen("ques1.txt", 'r');
+      $str = fread($solve, filesize("ques1.txt"));
+      echo "$str";
+      fclose($solve);
+    }
+    else if($ques == 2){
+      $solve=fopen("ques2.txt", 'r');
+      $str = fread($solve, filesize("ques2.txt"));
+      echo "$str";
+      fclose($solve);
+    }
 ?>
 
 <form action="answer.txt">
@@ -24,7 +38,7 @@ while(!feof($file))
 </select>
 </tr>
 <tr>
-<td colspan=11 align=center><textarea name="program" rows=20 cols=150></textarea>
+<td colspan=11 align=center><textarea name="program" rows=30 cols=150></textarea>
 </tr>
 <tr>
 <td colspan=11 align=center><input type=submit value="SUBMIT">
