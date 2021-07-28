@@ -1,0 +1,2 @@
+Question :- 
+Write a program to Sort the given array using Merge sort.
